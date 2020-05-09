@@ -1,7 +1,11 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <h2>{{ number }}</h2>
+    <LikeHeader v-slot:default="slotProps">
+      <p>{{ slotProps }}</p>
+      <h2>みなさん</h2>
+      <h3>はじめまして</h3>
+      <p>よろしくお願いします</p>
+    </LikeHeader>
     <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
   </div>
@@ -30,4 +34,7 @@ export default {
   div {
     border: 1px solid blue;
   }
+  /* h1 {
+    color: red;
+  } */
 </style>
